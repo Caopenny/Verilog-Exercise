@@ -1,0 +1,18 @@
+First think about how to git the square root of a using C language.  We find that the difference between two square number is always odd. Therefore, as long as the value of square is smaller than the input value a, the while loop would go on. 
+
+
+usigned long sqrt (unsigned long a){
+	unsigned long square=1;
+	unsigned long delta=3;
+	while (square <=a)
+	square=square+delta;
+	delta=delta+2;
+
+}
+
+return (delta/2-1);}
+
+
+As what we did in the GCD example, we have 4 register for a, sq, del and out. And we need some combination blocks to minus and add.  
+
+Notice the size of square is 8 bit, and the size of delta is 5 bit. Though to record the value of delta exactly, we seem to need 6 bit(square=256——delta=33), however using 5 bits, when doing delta/2-1for delta=33, we obtain 11111. The lower 4 bits are 15 which is right. So we use 5 bits to record delta. And we use 4 bits to record root.
