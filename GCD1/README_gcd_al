@@ -1,0 +1,8 @@
+while(x!=y) begin
+if(x<y)y=y-x;
+else x=x-y;
+end
+
+gcd=x
+
+
